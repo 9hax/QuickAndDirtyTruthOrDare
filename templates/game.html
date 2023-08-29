@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Truth or Dare</title>
+</head>
+<body>
+    <h1>Truth or Dare</h1>
+    <h2>Choose your action:</h2>
+    <p id="q">Question: {{ question }}</p>
+    <p id="d">Dare: {{ dare }}</p>
+    <form action="/game" method="POST" id="n">
+        <button type="submit" name="choice" value="truth">Next One!</button>
+    </form>
+    <button onclick="a()">Truth</button>
+    <button onclick="b()" >Dare</button>
+    <script>
+        document.getElementById("q").setAttribute("style", "display:none;")
+        document.getElementById("d").setAttribute("style", "display:none;")
+        document.getElementById("n").setAttribute("style", "display:none;")
+        function a() {
+            document.getElementById("n").setAttribute("style", "display:block;")
+            document.getElementById("q").setAttribute("style", "display:block;")
+        }
+        function b() {
+            document.getElementById("d").setAttribute("style", "display:block;")
+            document.getElementById("n").setAttribute("style", "display:block;")
+        }
+    </script>
+</body>
+</html>

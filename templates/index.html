@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Registration</title>
+</head>
+<body>
+    <h1>Player Registration</h1>
+    <form method="POST">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Register</button>
+    </form>
+    <h2>Registered Players:</h2>
+    <ul>
+        {% for player in players %}
+            <li>
+                {{ player }}
+                {% if player == session['player'] %}
+                    <form action="/logoff" method="GET">
+                        <button type="submit">Logoff</button>
+                    </form>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

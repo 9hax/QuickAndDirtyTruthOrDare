@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Ended</title>
+    <meta http-equiv="refresh" content="2">
+</head>
+<body>
+    <h1>Game Ended</h1>
+    <h2>Scores:</h2>
+    <ul>
+        {% for player, data in players.items() %}
+            <li>{{ player }}: {{ data['score'] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
